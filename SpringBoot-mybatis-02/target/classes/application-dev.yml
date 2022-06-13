@@ -1,0 +1,25 @@
+#数据库连接信息
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mybatis?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: asd
+
+#mybatis设置
+mybatis:
+  #设置包别名
+  type-aliases-package: com.gavin.po
+  #mapper映射文件
+  #mapper-locations: com.gavin.mapper/*.xml
+  mapper-locations: classpath:mapper/*.xml
+  #日志实现
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#日志记录级别
+logging:
+  level:
+    com:
+      gavin:
+        mapper: debug
